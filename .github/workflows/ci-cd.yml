@@ -13,9 +13,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Check HTML file
         run: |
           test -f index.html
+
+      - name: Validate HTML
+        run: npm run validate
 
       - name: CI Success
         run: echo "CI checks passed successfully!"
